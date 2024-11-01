@@ -13,6 +13,6 @@ class JewelrySeeder extends Seeder
      */
     public function run(): void
     {
-        Jewelry::factory()->count()->create();
+        Jewelry::factory()->count(10)->create();
     }
 }
