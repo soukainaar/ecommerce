@@ -20,7 +20,7 @@ class JewelryFactory extends Factory
         return [
             'name' => $this->faker->word,
             'description' => $this->faker->sentence,
-            'categorie_id' => $this->faker->faker->randomElement(Categorie::pluck('id')->toArray()),
+            'categorie_id' => $this->faker->randomElement(Categorie::pluck('id')->toArray()),
             'price' => $this->faker->randomFloat(2, 10, 1000),
             'materiel' => $this->faker->word,
             'brand' => $this->faker->company,
