@@ -29,7 +29,15 @@ class JewelryController extends Controller
      */
     public function store(Request $request)
     {
-        $jewelry = Jewelry::create($request->all());
+        $validatedData = $request->validate([
+            'name'=> 'required|max:255',
+            'description'=> 'required',
+            'categorie_id'=> 'required|integer',
+            'price'=> 'required|numeric',
+            'materiel'=> 'required|max:255',
+            'brand'=> 'required|max:255',
+        ]);
+        $jewelry = Jewelry::create($validatedData);
         return response()->json($jewelry , 201);
     }
 
@@ -38,7 +46,8 @@ class JewelryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $jewelry = Jewelry::find($id);
+        return response()->json($jewelry);
     }
 
     /**
@@ -54,7 +63,17 @@ class JewelryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name'=> 'required|max:255',
+            'description'=> 'required',
+            'categorie_id'=> 'required|integer',
+            'price'=> 'required|numeric',
+            'materiel'=> 'required|max:255',
+            'brand'=> 'required|max:255',
+        ]);
+        $jewelry = Jewelry::find($id);
+        $jewelry->update($validatedData);
+        return response()->json($jewelry, 200);
     }
 
     /**
@@ -62,6 +81,8 @@ class JewelryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $jewelry = Jewelry::find($id);
+        $jewelry->delete();
+        return response()->json(null, 204);
     }
 }
