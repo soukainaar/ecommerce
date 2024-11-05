@@ -10,7 +10,7 @@ use App\Models\Customer;
 class Review extends Model
 {
     use HasFactory;
-    protected $fillable = 
+    protected $fillable =
         [
             'jewelry_id',
             'customer_id',
@@ -22,7 +22,7 @@ class Review extends Model
         public function jewelry(){
             return $this->belongsTo(Jewelry::class);
         }
-    
+
         public function customer(){
             return $this->belongsTo(Customer::class);
         }
