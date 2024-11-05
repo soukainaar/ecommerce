@@ -17,7 +17,7 @@ class CustomerFactory extends Factory
     public function definition(): array
     {
         return [
-            'firstName' => $this->faker->firstName ,
+            'fistName' => $this->faker->firstName ,
             'lastName' => $this->faker->lastName ,
             'email' => $this->faker->unique()->safeEmail ,
             'tel' => $this->faker->phoneNumber
