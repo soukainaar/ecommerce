@@ -7,6 +7,8 @@ use Database\Seeders\CustomerSeeder;
 use Database\Seeders\ReviewSeeder;
 use Database\Seeders\OrderSeeder;
 use Database\Seeders\PermissionSeeder;
+use Database\Seeders\RoleSeeder;
+use Database\Seeders\UserSeeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -25,6 +27,8 @@ class DatabaseSeeder extends Seeder
             ReviewSeeder::class,
             OrderSeeder::class,
             PermissionSeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class,
         ]);
 
     }
